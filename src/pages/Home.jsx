@@ -8,21 +8,36 @@ import Categories from "./../components/Categories/Categories";
 const Home = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [categoryId, setCategoryId] = useState(0);
+  const [sortType, setSortType] = useState({
+    name: "популярністю",
+    sortProperty: "rating",
+  });
 
   useEffect(() => {
-    fetch("https://6324553abb2321cba929fab0.mockapi.io/items")
+    setIsLoading(true);
+
+    const order = sortType.sortProperty.includes("-") ? "desc" : "asc";
+    const sortBy = sortType.sortProperty.replace("-", "");
+    const category = categoryId > 0 ? `category=${categoryId}` : "";
+    fetch(
+      `https://6324553abb2321cba929fab0.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}`
+    )
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
         setIsLoading(false);
       });
-      window.scrollTo(0,0);
-  }, []);
+    window.scrollTo(0, 0);
+  }, [categoryId, sortType]);
   return (
     <div className="container">
       <div className="content__top">
-        <Categories />
-        <Sort />
+        <Categories
+          value={categoryId}
+          onChangeCategory={(id) => setCategoryId(id)}
+        />
+        <Sort value={sortType} onChangeSort={(id) => setSortType(id)} />
       </div>
       <h2 className="content__title">Всі піци</h2>
       <div className="content__items">
