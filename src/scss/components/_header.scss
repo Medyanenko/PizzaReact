@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @media (max-width: 645px ) {
+    @media (max-width: 1160px ) {
       flex-direction: column;
     }
   }
@@ -30,9 +30,6 @@
       letter-spacing: 1%;
       text-transform: uppercase;
       font-weight: 800;
-      @media (max-width: 645px ) {
-        text-align: center;
-      }
     }
 
     p {

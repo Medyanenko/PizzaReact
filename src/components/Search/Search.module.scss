@@ -1,0 +1,35 @@
+.root {
+  position: relative;
+
+}
+.input {
+  font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  width: 280px;
+  border-radius: 10px;
+  padding-left: 40px;
+  &:focus{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  @media (max-width: 1160px ) {
+    margin: 25px 0;
+  }
+}
+.icon {
+  position: absolute;
+  top: 15px;
+  left: 12px;
+  @media (max-width: 1160px ) {
+    top: 40px;
+  }
+}
+.clear{
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  @media (max-width: 1160px ) {
+    top: 33px;
+  }
+}
