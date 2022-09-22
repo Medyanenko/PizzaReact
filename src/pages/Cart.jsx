@@ -107,7 +107,7 @@ const Cart = () => {
             </span>
             <span>
               {" "}
-              Сумма заказа: <b>{totalPrice} грн</b>{" "}
+              Сума замовлення: <b>{totalPrice} грн</b>{" "}
             </span>
           </div>
           <div className="cart__bottom-buttons">
@@ -131,10 +131,10 @@ const Cart = () => {
                 />
               </svg>
 
-              <span>Вернуться назад</span>
+              <span>Повернутися назад</span>
             </Link>
             <div className="button pay-btn">
-              <span>Оплатить сейчас</span>
+              <span>Оплатити зараз</span>
             </div>
           </div>
         </div>

@@ -63,7 +63,7 @@ const Home = () => {
       fetchPizzas();
     }
     isSearch.current = false;
-  }, [categoryId, sort, searchValue, currentPage]);
+  },[categoryId, sort, searchValue, currentPage]);
 
   //якщо був перший рендер, перевіряємо URL-параметри і зберігаємо в редаксі
   useEffect(() => {
@@ -73,7 +73,7 @@ const Home = () => {
       dispatch(setFilters({ ...params, sort }));
       isSearch.current = true;
     }
-  }, []);
+  },[]);
 
   //до першого рендеру не вшиваються параметри, якщо перший рендер був, то дані вшиваються
   useEffect(() => {
