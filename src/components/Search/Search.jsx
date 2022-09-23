@@ -5,19 +5,20 @@ import debounce from "lodash.debounce";
 import { setSearchValue } from "../../redux/slices/filterSlice";
 import s from "./Search.module.scss";
 const Search = () => {
+  const dispatch = useDispatch();
   const [value, setValue] = useState("");
   const inputRef = useRef();
-  const dispatch = useDispatch();
+  
 
   const onClickClear = () => {
     setValue("");
-    dispatch(setSearchValue(value));
+    dispatch(setSearchValue(""));
     inputRef.current.focus();
   };
   const updateSearchValue = useMemo(
     () =>
       debounce((str) => {
-        setSearchValue(str);
+        dispatch(setSearchValue(str));
       }, 250),
     [setSearchValue]
   );

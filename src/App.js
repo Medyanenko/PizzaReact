@@ -4,10 +4,10 @@ import Header from "./components/Header/Header";
 
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
+import FullPizza from "./pages/FullPizza";
 import NotFoundPage from "./pages/NotFoundPage";
 import "./scss/app.scss";
 
-export const SearchContext = React.createContext('');
 function App() {
   return (
     <div className="wrapper">
@@ -16,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/pizza/:id" element={<FullPizza />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
