@@ -92,9 +92,9 @@ const Home = () => {
   }, []);
 
   const pizzas = items.map((obj) => (
-    <Link key={obj.id} to={`/pizza/${obj.id}`}>
+    //<Link key={obj.id} to={`/pizza/${obj.id}`}>
       <PizzaBlock {...obj} />
-    </Link>
+   // </Link>
   ));
   const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
 
