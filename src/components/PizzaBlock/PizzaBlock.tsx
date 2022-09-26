@@ -2,12 +2,20 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, selectCartItemById } from "../../redux/slices/cartSlice";
 
-const PizzaBlock = ({id, title, price, imageUrl, sizes, types }) => {
+type PizzaBlockProps = {
+  id: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+  sizes: number[];
+  types: number[];
+};
+const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, sizes, types }) => {
   const [activeType, setActiveType] = useState(0);
   const [activeSize, setActiveSize] = useState(0);
   const typeName = ["тонке", "традиційне"];
 
-  const cartItem = useSelector(selectCartItemById(id))
+  const cartItem = useSelector(selectCartItemById(id));
   const dispatch = useDispatch();
   const addedCount = cartItem ? cartItem.count : 0;
   const onClickAdd = () => {
@@ -17,11 +25,10 @@ const PizzaBlock = ({id, title, price, imageUrl, sizes, types }) => {
       price,
       imageUrl,
       type: typeName[activeType],
-      size: sizes[activeSize]
-
-    }
-    dispatch(addItem(item))
-  }
+      size: sizes[activeSize],
+    };
+    dispatch(addItem(item));
+  };
   return (
     <div className="pizza-block-wrapper">
       <div className="pizza-block">
@@ -53,7 +60,10 @@ const PizzaBlock = ({id, title, price, imageUrl, sizes, types }) => {
         </div>
         <div className="pizza-block__bottom">
           <div className="pizza-block__price">від {price} грн</div>
-          <button onClick={onClickAdd} className="button button--outline button--add">
+          <button
+            onClick={onClickAdd}
+            className="button button--outline button--add"
+          >
             <svg
               width="12"
               height="12"
@@ -67,7 +77,7 @@ const PizzaBlock = ({id, title, price, imageUrl, sizes, types }) => {
               />
             </svg>
             <span>Додати</span>
-            {addedCount > 0 && <i> {addedCount} </i> }
+            {addedCount > 0 && <i> {addedCount} </i>}
           </button>
         </div>
       </div>
