@@ -2,11 +2,10 @@ import React from "react";
 
 type CategoriesProps = {
   value: number;
-  onChangeCategory: any;
-}
+  onChangeCategory: (idx:number) => void;
+};
 
-const Categories: React.FC<CategoriesProps> = ({value, onChangeCategory}) => {
-
+const Categories: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => {
   const categories = [
     "Всі",
     "М'ясні",
@@ -20,7 +19,8 @@ const Categories: React.FC<CategoriesProps> = ({value, onChangeCategory}) => {
     <div className="categories">
       <ul>
         {categories.map((categoryName, id) => (
-          <li key={id}
+          <li
+            key={id}
             onClick={() => onChangeCategory(id)}
             className={value === id ? "active" : ""}
           >
