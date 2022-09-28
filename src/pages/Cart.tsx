@@ -93,7 +93,7 @@ const Cart:React.FC = () => {
               />
             </svg>
 
-            <span>Очистить корзину</span>
+            <span>Очистити корзину</span>
           </div>
         </div>
         <div className="content__items">
@@ -105,7 +105,7 @@ const Cart:React.FC = () => {
           <div className="cart__bottom-details">
             <span>
               {" "}
-              Всего пицц: <b>{totalCount} шт.</b>{" "}
+             Всього: <b>{totalCount} шт.</b>{" "}
             </span>
             <span>
               {" "}
