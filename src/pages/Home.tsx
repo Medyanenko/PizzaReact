@@ -11,18 +11,15 @@ import Skeleton from "../components/PizzaBlock/Skeleton";
 import Pagination from "../components/Pagination/Pagination";
 import { sortList } from "../components/Sort/Sort";
 
-import {
-  selectFilter,
-  setCategoryId,
-  setCurrentPage,
-  setFilters,
-} from "../redux/slices/filterSlice";
+
 import {
   fetchPizzas,
   SearchPizzaParams,
-  selectPizzaData,
-} from "../redux/slices/pizzaSlice";
+} from "../redux/pizza/slice";
 import { useAppDispatch } from "../redux/store";
+import { selectFilter } from "../redux/filter/selectors";
+import { setCategoryId, setCurrentPage, setFilters } from "../redux/filter/slice";
+import { selectPizzaData } from "../redux/pizza/selectors";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
