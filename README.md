@@ -5,11 +5,11 @@ I am glad to welcome you to my pet project - [ PizzaReact ](https://medyanenko.g
 
 ## On this page you can:
 
--filter products by name;
--sort by categories and other parameters (popularity, price, alphabet);
--add and remove items to the shopping cart;
--calculate order amount;
--navigate pages using pagination.
+- filter products by name;
+- sort by categories and other parameters (popularity, price, alphabet);
+- add and remove items to the shopping cart;
+- calculate order amount;
+- navigate pages using pagination.
 
 ## During development:
 
@@ -25,15 +25,15 @@ I am glad to welcome you to my pet project - [ PizzaReact ](https://medyanenko.g
 
 ## Used in development:
 
-- ReactJS 18
-- TypeScript
-- Redux Toolkit
-- React Router v6
-- Axios + Fetch 
-- React Hooks 
-- Prettier
-- CSS-Modules / SCSS 
-- React Content Loader 
-- React Pagination 
-- Lodash.Debounce
-- Code Splitting (react lazy load)
+- ReactJS 18;
+- TypeScript;
+- Redux Toolkit (data storage / pizzas);
+- React Router v6 (navigation);
+- Axios + Fetch (sending a request to the backend); 
+- React Hooks (useState, useEffect, useCallback, useMemo, etc);
+- Prettier (code formatting);
+- CSS-Modules / SCSS (stylization);
+- React Content Loader (skeleton); 
+- React Pagination (pagination)(pagination); 
+- Lodash.Debounce (function to prevent debounce);
+- Code Splitting (react lazy load).
