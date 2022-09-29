@@ -1,20 +1,21 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import {HashRouter } from "react-router-dom";
 import App from "./App";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import React from "react";
 
 const rootElem = document.getElementById("root");
 if (rootElem) {
   const root = ReactDOM.createRoot(rootElem);
 
   root.render(
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
-        {/* <React.StrictMode> */}
+        <React.StrictMode>
         <App />
-        {/* </React.StrictMode> */}
+        </React.StrictMode>
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

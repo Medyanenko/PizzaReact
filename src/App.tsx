@@ -15,7 +15,7 @@ function App() {
       <Header/>
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="" element={<Home/>} />
           <Route path="/cart" element={<Suspense fallback={<div>Завантаження кошику...</div>}><Cart /></Suspense>} />
           <Route path="/pizza/:id" element={<Suspense fallback={<div>Завантаження найсмачнішої піци...</div>}><FullPizza /></Suspense>} />
           <Route path="*" element={<Suspense fallback={<div>Завантаженн...</div>}><NotFoundPage /></Suspense>} />
