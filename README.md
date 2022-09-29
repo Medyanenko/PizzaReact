@@ -34,6 +34,6 @@ I am glad to welcome you to my pet project - [ PizzaReact ](https://medyanenko.g
 - Prettier (code formatting);
 - CSS-Modules / SCSS (stylization);
 - React Content Loader (skeleton); 
-- React Pagination (pagination)(pagination); 
+- React Pagination (pagination); 
 - Lodash.Debounce (function to prevent debounce);
 - Code Splitting (react lazy load).
