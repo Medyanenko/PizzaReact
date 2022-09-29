@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import {useRef, useMemo } from "react";
+import { useRef, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import debounce from "lodash.debounce";
 import { setSearchValue } from "../../redux/filter/slice";
 import s from "./Search.module.scss";
-const Search:React.FC = () => {
+const Search: React.FC = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  
 
   const onClickClear = () => {
     setValue("");
@@ -17,12 +16,13 @@ const Search:React.FC = () => {
   };
   const updateSearchValue = useMemo(
     () =>
-      debounce((str:string) => {
+      debounce((str: string) => {
         dispatch(setSearchValue(str));
       }, 250),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [setSearchValue]
   );
-  const onChangeInput = (event:React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };

@@ -32,13 +32,14 @@ const Home: React.FC = () => {
 
   const onChangeCategory = useCallback((id: number) => {
     dispatch(setCategoryId(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onChangePage = (number: number) => {
     dispatch(setCurrentPage(number));
   };
 
-  const getPizzas = async () => {
+  const getPizzas =  async () => {
     const sortBy = sort.sortProperty.replace("-", "");
     const order = sort.sortProperty.includes("-") ? "asc" : "desc";
     const category = categoryId > 0 ? `category=${categoryId}` : "";
@@ -74,10 +75,12 @@ const Home: React.FC = () => {
     if (!window.location.search) {
       dispatch(fetchPizzas({} as SearchPizzaParams));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   useEffect(() => {
     getPizzas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   // Парсим параметри при першому рендері
@@ -98,6 +101,7 @@ const Home: React.FC = () => {
       );
     }
     isMounted.current = true;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const pizzas = items.map((obj: any) => (
